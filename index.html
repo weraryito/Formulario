@@ -14,6 +14,7 @@
 			background-color: lightgrey;
 			border-style: solid;
 			margin: auto;
+
 		}
 
 		.bar {
@@ -21,6 +22,7 @@
 		}
 
 		form {
+			margin-top: 75px;
 			display: inline-grid;
 		}
 
@@ -29,22 +31,53 @@
 		}
 
 		input {
-			width: 200px;
-			margin-bottom: 10px;
+			width: 150px;
+			margin-left: 5px;
+			margin-bottom: 20px;
+			float: right;
+		}
+
+		#sub {
+
 		}
 	</style>
 </head>
+
 <body>
 	<div class='content'>
 		<form>
 			<div class='bar'>
-				<label for="fname">Nombre(s):</label>
-				<input type="text" name="fname">
+				<label for="nombre">Nombre(s):</label>
+				<input type="text" name="nombre" pattern="([A-Za-z]+\s?)+" title="Ingrese nombre(s).">
 			</div>
 			
 			<div class='bar'>
-				<label for="lname">Apellidos:</label>
-				<input type="text" name="lname">
+				<label for="apellido">Apellidos:</label>
+				<input type="text" name="apellido" pattern="[A-Za-z]+\s[A-Za-z]+" title="Ingrese ambos apellidos.">
+			</div>
+
+			<div class='bar'>
+				<label for="edad">Edad:</label>
+				<input type="text" name="edad" pattern="[1-9]+[8-9]|^[2-9][0-9]" title="Ingrese una edad mayor que 18 y menor que 100.">
+			</div>
+
+			<div class='bar'>
+				<label for="email">E-Mail:</label>
+				<input type="text" name="email" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ingrese un correo válido.">
+			</div>
+
+			<div class='bar'>
+				<label for="telefono">Telefono:</label>
+				<input type="text" name="telefono" pattern="\d{10}" title="Ingrese los 10 digitos del número.">
+			</div>
+
+			<div class='bar'>
+				<label for="pais">País:</label>
+				<input type="text" name="pais" pattern="([A-Za-z]+\s?)+">
+			</div>
+
+			<div class='bar'>
+				<input type="submit" name="submit" id="sub">
 			</div>
 		</form>
 	</div>
