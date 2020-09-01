@@ -37,6 +37,14 @@
 			float: right;
 		}
 
+		input:invalid {
+  			border: 2px solid red;
+		}
+
+		input:valid {
+  			border: 2px solid black;
+		}
+
 		#reg {
 			float: none;
 		}
@@ -343,6 +351,7 @@
 	<script type="text/javascript">
 
 		function validateForm() {
+			var cont = 0;
 		 	var nombre = document.forms["myForm"]["nombre"].value;
 		 	var apellido = document.forms["myForm"]["apellido"].value;
 		 	var edad = document.forms["myForm"]["edad"].value;
@@ -358,11 +367,14 @@
 		 			alert("Todos los campos deben ser llenados.");
 		 			return false;
 		 			break;
+		 		} else {
+		 			cont++;
+		 			if(cont==form.length) {
+		 				alert("Formulario enviado.")
+		 				return true;
+		 			}
 		 		}
 		 	}
-
-
-
 		}
 	</script>
 
